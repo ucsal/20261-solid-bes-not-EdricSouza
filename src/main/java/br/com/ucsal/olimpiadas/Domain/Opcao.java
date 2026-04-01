@@ -5,9 +5,9 @@ import br.com.ucsal.olimpiadas.Application.UseCase.*;
 public class Opcao {
     public int Id;
     public String texto;
-    public IUseCase<?> usecase;
+    public IUseCase usecase;
 
-    public Opcao(int Id, String texto, IUseCase<?> usecase) {
+    public Opcao(int Id, String texto, IUseCase usecase) {
         this.Id = Id;
         this.texto = texto;
         this.usecase = usecase;
@@ -19,7 +19,7 @@ public class Opcao {
     public String getTexto() {
         return texto;
     }
-    public IUseCase<?> getUsecase() {
+    public IUseCase getUsecase() {
         return usecase;
     }
 }

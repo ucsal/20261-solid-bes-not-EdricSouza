@@ -1,6 +1,8 @@
 package br.com.ucsal.olimpiadas.Application.UseCase;
 
-public interface IUseCase<T> {
+import java.util.Scanner;
+
+public interface IUseCase {
     
-    public T Execute(T valor);
+    public void Execute(Scanner in);
 }

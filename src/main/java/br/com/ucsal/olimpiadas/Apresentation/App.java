@@ -23,11 +23,11 @@ public class App {
 	public static void main(String[] args) {
 		seed.Execute(in);
 
-		opcoes.add(new Opcao(1, "Cadastrar participante", new CadastrarParticipanteUseCase(participanteRepository)));
-		opcoes.add(new Opcao(2, "Cadastrar prova", new CadastrarProvaUseCase(provaRepository)));
-		opcoes.add(new Opcao(3, "Cadastrar questão (A–E) em uma prova", new CadastrarQuestaoUseCase(provaRepository, questaoRepository)));
-		opcoes.add(new Opcao(4, "Aplicar prova (selecionar participante + prova)", new AplicarProvaUseCase(participanteRepository, provaRepository, tentativaRepository, questaoRepository, imprimirTabuleiroFen)));
-		opcoes.add(new Opcao(5, "Listar Tentativas", new ListarTentativasUseCase(tentativaRepository)));
+		opcoes.add(OpcaoFactory.criar("Cadastrar participante", new CadastrarParticipanteUseCase(participanteRepository)));
+		opcoes.add(OpcaoFactory.criar("Cadastrar prova", new CadastrarProvaUseCase(provaRepository)));
+		opcoes.add(OpcaoFactory.criar("Cadastrar questão (A–E) em uma prova", new CadastrarQuestaoUseCase(provaRepository, questaoRepository)));
+		opcoes.add(OpcaoFactory.criar("Aplicar prova (selecionar participante + prova)", new AplicarProvaUseCase(participanteRepository, provaRepository, tentativaRepository, questaoRepository, imprimirTabuleiroFen)));
+		opcoes.add(OpcaoFactory.criar("Listar Tentativas", new ListarTentativasUseCase(tentativaRepository)));
 
 		Menu.Execute(opcoes, in);
 	}
